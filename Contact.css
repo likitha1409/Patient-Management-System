@@ -1,0 +1,121 @@
+/* src/pages/Contact.css */
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background: linear-gradient(to right, #f8fbff, #e6f0ff);
+  min-height: 90vh;
+  overflow: hidden;
+}
+
+.contact-content {
+  flex: 1;
+  min-width: 300px;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  color: #007cf0;
+  margin-bottom: 10px;
+}
+
+.contact-subheading {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-left: 5px solid #00dfd8;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-card span {
+  font-weight: bold;
+  color: #007cf0;
+}
+
+.contact-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #007cf0, #00dfd8);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 124, 240, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: linear-gradient(to right, #00dfd8, #007cf0);
+  box-shadow: 0 10px 25px rgba(0, 124, 240, 0.5);
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .contact-content,
+  .contact-image {
+    margin-bottom: 30px;
+  }
+
+  .contact-card {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,164 @@
+/* ---------- Global Background + Animation ---------- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #f8fbff, #dfe9f3, #c3cfe2, #e4ecf6);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Blobs Animation ---------- */
+.background-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(80px);
+  animation: moveBlobs 20s infinite ease-in-out alternate;
+}
+
+.blob1 {
+  background: #007bff;
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  background: #00dfd8;
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.blob3 {
+  background: #ff8c94;
+  width: 200px;
+  height: 200px;
+  top: 70%;
+  left: 30%;
+  animation-delay: 8s;
+}
+
+@keyframes moveBlobs {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-50px, 50px) scale(1.2);
+  }
+}
+
+/* ---------- Shared Auth Form ---------- */
+.auth-container {
+  max-width: 420px;
+  margin: 100px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease;
+}
+
+.auth-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+.auth-container button {
+  padding: 14px;
+  font-size: 16px;
+  background: linear-gradient(to right, #007bff, #00dfd8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: linear-gradient(to right, #00dfd8, #007bff);
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-container p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 500px) {
+  .auth-container {
+    margin: 60px 20px;
+    padding: 30px;
+  }
+
+  .auth-container h2 {
+    font-size: 1.5rem;
+  }
+}
